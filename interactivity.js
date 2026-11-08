@@ -8,7 +8,7 @@ function modularAddD3VisToPage(elementID){
     //PRE: Pass the string of the ID we want to append the new D3 Vis to
     //POST: Updated the web page to include the D3 vis as a child of the element whose ID we pass
 
-    d3.json("flare-2.json").then(function(data){processD3Vis(data,elementID)}); 
+    d3.json("./flare.json").then(function(data){processD3Vis(data,elementID)});
 }
 
 function processD3Vis(data,elementID){
