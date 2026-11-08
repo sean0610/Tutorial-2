@@ -43,6 +43,100 @@
         -->
 
 
+        <!-- First approach (using an SVG) -->
+        <!-- When we have a completed SVG already, we can use the `img` tag instead of trying to use the `svg` tag -->
+        <!-- <div class="new-container">
+            <div class="new-container new-content-title">
+                <h2 class="fancy-title">IMG SVG from Altair below!</h2>
+            </div>
+            <div class="new-container new-content-body">
+                <img src="chart.svg" width="500px">
+            </div>
+        </div> -->
+        
+
+
+        <!-- Second approach (importing HTML code from altair into your webpage) -->
+        <!--         
+            <style>
+                #vis.vega-embed {
+                width: 100%;
+                display: flex;
+                }
+
+                #vis.vega-embed details,
+                #vis.vega-embed details summary {
+                position: relative;
+                }
+            </style>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+        <div class="new-container">
+            <div class="new-container new-content-title">
+                <h2 class="fancy-title">Javascript SVG from Altair below!</h2>
+            </div>
+            <div class="new-container new-content-body">
+                <div id="vis"></div>
+                <script>
+                    (function(vegaEmbed) {
+                    var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "scale": {"bandPaddingInner": 0.2}}, "data": {"name": "data-7684334a68ab74ba4c3ca7d0ceaeb461"}, "mark": {"type": "bar", "cursor": "pointer", "fill": "#4C78A8", "stroke": "black"}, "encoding": {"fillOpacity": {"condition": [{"param": "select", "value": 1}], "value": 0.3}, "strokeWidth": {"condition": [{"param": "select", "value": 2, "empty": false}, {"param": "highlight", "value": 1, "empty": false}], "value": 0}, "x": {"field": "a", "type": "ordinal"}, "y": {"field": "b", "type": "quantitative"}}, "height": 200, "params": [{"name": "select", "select": {"type": "point", "on": "click"}}, {"name": "highlight", "select": {"type": "point", "on": "pointerover"}}], "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-7684334a68ab74ba4c3ca7d0ceaeb461": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}};
+                    var embedOpt = {"mode": "vega-lite"};
+
+                    function showError(el, error){
+                        el.innerHTML = ('<div style="color:red;">'
+                                        + '<p>JavaScript Error: ' + error.message + '</p>'
+                                        + "<p>This usually means there's a typo in your chart specification. "
+                                        + "See the javascript console for the full traceback.</p>"
+                                        + '</div>');
+                        throw error;
+                    }
+                    const el = document.getElementById('vis');
+                    vegaEmbed("#vis", spec, embedOpt)
+                        .catch(error => showError(el, error));
+                    })(vegaEmbed);
+
+                </script>
+            </div>
+        </div> -->
+
+
+        <!-- Statically adding a D3 visualization to the page -->
+        <!-- <div class="new-container">
+            <div class="new-container new-content-title">
+                <h2 class="fancy-title">D3 exploration here below!</h2>
+            </div>
+            <div class="new-container new-content-body">
+                <svg id="my_dataviz" width="400" height="300" onload="staticAddD3VisToPage();"></svg>
+
+            </div>
+        </div> -->
+
+        <!-- Dynamically add a D3 visualization to the page -->
+        <div class="new-container center-content">
+            <div class="new-content-title center-content">
+                <h2 class="fancy-title">D3 exploration here below!</h2>
+            </div>
+            <p>We're going to do our exploration below!</p>
+            <div id="in-class-exploration" class="new-content-body center-content">
+                <script id="script-for-container">
+                    parent = document.getElementById("script-for-container").parentElement;
+                    modularAddD3VisToPage(parent.id);
+                </script>
+            </div>
+        </div>
+
+        <!-- Static visualization with our own data from ExampleData.csv -->
+        <div class="new-container center-content">
+            <div class="new-content-title center-content">
+                <h2 class="fancy-title">D3 exploration here below!</h2>
+            </div>
+            <p>We're going to do our exploration below!</p>
+            <div id="other-in-class-exploration" class="new-content-body center-content">
+                <div id="in_class_walkthrough_viz"></div>
+                <script>inClassExampleOfStaticAddD3VisToPage()</script>
+            </div>
+        </div>
 
     </div>
     <div id="footer" class="footer">

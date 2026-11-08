@@ -4,7 +4,36 @@
 
 /* Custom fonts/cohesive color scheme/custom margins and padding */
 
+.new-container{
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+    border: black 1px solid;
+    border-radius: 5px;
+}
 
+.center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-content-title{
+    height: 50px;
+    width: 100%;
+    background-color: darkgray;
+    border-bottom: solid 1px black;
+}
+
+.new-content-body{
+    width: 70%;
+    flex-grow: 1;
+}
+
+.fancy-title{
+    font-family: cursive;
+    text-decoration: underline;
+}
 
 /* OLD CSS BELOW */
 
